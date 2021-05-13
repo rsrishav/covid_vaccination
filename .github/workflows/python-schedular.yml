@@ -5,7 +5,7 @@ name: Python schedular
 
 on:
   schedule:
-  - cron: "32 * * * *"
+  - cron: "34 9 * * *"
 
 jobs:
   deploy:
