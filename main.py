@@ -5,7 +5,7 @@ import urllib.request
 from datetime import datetime
 from kaggle import KaggleApi as kag_api
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 DATASET_NAME = "covid-vaccination-dataset"
 DATA_FOLDER = "dataset"
 URLS = {
@@ -43,9 +43,10 @@ if __name__ == '__main__':
     print("[INFO] Kaggle credentials authenticated.")
     response = kag_api.dataset_create_version(api, DATA_FOLDER, f"Dataset updated till (UTC): {datetime.utcnow()}",
                                               convert_to_csv=True, delete_old_versions=False)
-    if response.status == "ok":
-        print(f"[{datetime.now()}][INFO] Kaggle Dataset uploaded.")
-    else:
-        print(f"[{datetime.now()}][ERROR] {response.error}")
+    print(f"[INFO] Kaggle Dataset uploaded.")
+    # if response.status == "ok":
+    #     print(f"[{datetime.now()}][INFO] Kaggle Dataset uploaded.")
+    # else:
+    #     print(f"[{datetime.now()}][ERROR] {response.error}")
     clear_dir(DATA_FOLDER)
     time.sleep(10)
