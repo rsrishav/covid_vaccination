@@ -5,7 +5,7 @@ import urllib.request
 from datetime import datetime
 from kaggle import KaggleApi as kag_api
 
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 DATASET_NAME = "covid-vaccination-dataset"
 DATA_FOLDER = "dataset"
 URLS = {
