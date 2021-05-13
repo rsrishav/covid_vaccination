@@ -1,1 +1,1 @@
-# covid_vaccination_kaggle
+# COVID Vaccination
