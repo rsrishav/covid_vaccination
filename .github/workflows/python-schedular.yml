@@ -2,7 +2,7 @@ name: Python schedular
 
 on:
   schedule:
-  - cron: "*/6 * * * *"
+  - cron: '*/10 * * * *'
 
 jobs:
   job1:
