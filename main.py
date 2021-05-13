@@ -5,12 +5,11 @@ import urllib.request
 from datetime import datetime
 from kaggle import KaggleApi as kag_api
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 DATASET_NAME = "covid-vaccination-dataset"
 DATA_FOLDER = "dataset"
 URLS = {
-    "vaccinations.csv": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
-    "us_state_vaccinations.csv": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/us_state_vaccinations.csv"
+    "vaccinations.csv": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"
 }
 
 
@@ -31,8 +30,10 @@ def clear_dir(folder):
 
 
 def get_vaccine_data(urls):
+    if not os.path.exists(DATA_FOLDER):
+        os.mkdir(DATA_FOLDER)
     for key, value in urls.items():
-        urllib.request.urlretrieve(value, f"{DATA_FOLDER}\\{key}")
+        urllib.request.urlretrieve(value, os.path.join(DATA_FOLDER, key))
 
 
 if __name__ == '__main__':
@@ -47,4 +48,4 @@ if __name__ == '__main__':
     else:
         print(f"[{datetime.now()}][ERROR] {response.error}")
     clear_dir(DATA_FOLDER)
-    time.sleep(5)
+    time.sleep(10)
