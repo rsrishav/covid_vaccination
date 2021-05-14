@@ -5,7 +5,7 @@ import urllib.request
 from datetime import datetime
 from kaggle import KaggleApi as kag_api
 
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 DATASET_NAME = "covid-vaccination-dataset"
 DATA_FOLDER = "dataset"
 URLS = {
@@ -49,4 +49,4 @@ if __name__ == '__main__':
     # else:
     #     print(f"[{datetime.now()}][ERROR] {response.error}")
     clear_dir(DATA_FOLDER)
-    time.sleep(10)
+    time.sleep(1)
